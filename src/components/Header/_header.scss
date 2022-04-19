@@ -1,0 +1,27 @@
+nav {
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px;
+
+  .logo {
+    h1 {
+      color: $primary;
+      font-size: 80px;
+      margin: 10px 50px;
+    }
+  }
+
+  .links {
+    a {
+      margin: 10px 57px 10px 10px;
+      font-size: 24px;
+      text-decoration: none;
+      color: $primary;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

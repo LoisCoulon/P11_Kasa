@@ -1,6 +1,3 @@
-$font: "Montserrat", sans-serif;
-$primary: #ff6060;
-
 // Error page
 .wrapper {
   margin: 30px;
@@ -12,13 +9,11 @@ $primary: #ff6060;
     font-weight: bold;
     color: $primary;
     font-size: 288px;
-    font-family: $font;
   }
   h2 {
     font-weight: 500;
     color: $primary;
     font-size: 36px;
-    font-family: $font;
   }
 
   .backlink {

@@ -1,0 +1,32 @@
+.top {
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  img {
+    border-radius: 25px;
+    filter: brightness(0.7);
+    width: 90%;
+  }
+
+  p {
+    position: absolute;
+    font-size: 48px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-weight: 500;
+  }
+}
+
+.main {
+  margin-top: 43px;
+  display: flex;
+  justify-content: center;
+  &--grid {
+    background-color: $background;
+    height: 100px;
+    width: 90%;
+  }
+}
