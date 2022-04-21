@@ -1,14 +1,25 @@
+import { useState } from "react";
+import { useLocation } from "react-router-dom";
 import imgTop from "../../assets/top-img.png";
+import Card from "../../components/Card/Card";
+import json from "../../data/data.json";
 
 function Home() {
+  const [data, setData] = useState(json);
+
   return (
-    <section>
+    <section className="home-content">
       <div className="top">
         <img src={imgTop} alt="background" />
         <p>Chez vous, partout et ailleurs</p>
       </div>
       <div className="main">
-        <div className="main--grid"></div>
+        <div className="main--grid">
+          {data &&
+            data.map(({ id, title, cover }) => (
+              <Card id={id} title={title} cover={cover} key={id}></Card>
+            ))}
+        </div>
       </div>
     </section>
   );

@@ -1,12 +1,9 @@
-import logo from "../../assets/Vector.png";
+import logo from "../../assets/home.svg";
 
 function Footer() {
   return (
     <footer>
-      <h2>
-        K <img src={logo} alt="logo" />
-        sa
-      </h2>
+      <img src={logo} alt="logo" className="logo-footer" />
       <p>&copy; 2020 Kasa. All rights reserved</p>
     </footer>
   );
