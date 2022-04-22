@@ -4,7 +4,7 @@ import accordionData from "../../data/accordionData";
 
 function About() {
   return (
-    <section>
+    <section className="about">
       <div className="top">
         <img src={imgTop} alt="background" />
       </div>

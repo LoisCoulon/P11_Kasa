@@ -4,3 +4,17 @@
   align-items: center;
   flex-direction: column;
 }
+
+@media (max-width: 980px) {
+  .accordion {
+    margin-top: 20px;
+  }
+  .about {
+    .top {
+      img {
+        min-height: 220px;
+        object-fit: cover;
+      }
+    }
+  }
+}

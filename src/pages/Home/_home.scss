@@ -32,12 +32,12 @@
     width: 90%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 70px;
+    gap: 50px;
     place-items: center;
 
     .card {
-      width: 340px;
-      height: 340px;
+      width: 90%;
+      height: 100%;
       position: relative;
       border-radius: 10px;
       overflow: hidden;
@@ -58,6 +58,31 @@
         height: 100%;
         object-fit: cover;
         filter: brightness(0.7);
+      }
+    }
+  }
+}
+
+@media (max-width: 980px) {
+  .top {
+    img {
+      min-height: 100px;
+    }
+
+    p {
+      font-size: 20px;
+    }
+  }
+  .main {
+    &--grid {
+      display: flex;
+      flex-direction: column;
+      .card {
+        .title {
+        }
+
+        &--image {
+        }
       }
     }
   }
