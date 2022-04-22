@@ -1,0 +1,26 @@
+.gallery {
+  display: flex;
+  justify-content: center;
+  .container {
+    position: relative;
+    width: 90%;
+    height: 415px;
+    border-radius: 25px;
+    background-color: blue;
+
+    .leftArrow {
+      position: absolute;
+      top: 50%;
+      left: 0%;
+      transform: translate(50%, -50%);
+      cursor: pointer;
+    }
+    .rightArrow {
+      position: absolute;
+      top: 50%;
+      right: 0%;
+      transform: translate(-50%, -50%);
+      cursor: pointer;
+    }
+  }
+}

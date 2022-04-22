@@ -1,0 +1,16 @@
+.housing {
+  .accordions {
+    display: flex;
+    justify-content: center;
+    .description {
+      display: flex;
+      justify-content: center;
+      width: 50%;
+    }
+    .equipement {
+      display: flex;
+      justify-content: center;
+      width: 50%;
+    }
+  }
+}

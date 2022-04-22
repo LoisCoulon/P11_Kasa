@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Error from "./components/Error/Error";
 import About from "./pages/About/About";
+import Housing from "./pages/Housing/Housing";
 import "./main.scss";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
@@ -16,6 +17,7 @@ root.render(
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/logement/:id" element={<Housing />} />
         <Route path="*" element={<Error />} />
       </Routes>
       <Footer />

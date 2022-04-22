@@ -1,4 +1,4 @@
-footer {
+.footer {
   background-color: black;
   height: 200px;
   width: 100%;
@@ -7,6 +7,8 @@ footer {
   justify-content: center;
   align-items: center;
   margin-top: 80px;
+  position: static;
+  bottom: 0%;
 
   .logo-footer {
     margin-bottom: 10px;
