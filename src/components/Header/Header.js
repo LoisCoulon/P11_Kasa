@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom";
 
 function Header() {
   return (
-    <nav className=".header">
+    <nav className="header">
       <div className="logo">
         <img src={logo} alt="logo"></img>
       </div>
