@@ -4,7 +4,7 @@ import Card from "../../components/Card/Card";
 import json from "../../data/data.json";
 
 function Home() {
-  const [data, setData] = useState(json);
+  const [data] = useState(json);
 
   return (
     <section className="home-content">

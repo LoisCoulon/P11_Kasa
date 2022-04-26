@@ -4,11 +4,11 @@ import { useLocation } from "react-router-dom";
 
 function Header() {
   return (
-    <nav className="header">
+    <header className="header">
       <div className="logo">
         <img src={logo} alt="logo"></img>
       </div>
-      <div className="links">
+      <nav className="links">
         {useLocation().pathname === "/" ? (
           <Link className="homeLink active" to="/">
             Accueil
@@ -27,8 +27,8 @@ function Header() {
             A Propos
           </Link>
         )}
-      </div>
-    </nav>
+      </nav>
+    </header>
   );
 }
 

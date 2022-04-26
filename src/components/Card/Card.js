@@ -4,12 +4,12 @@ function Card(props) {
   const { id, title, cover } = props;
 
   return (
-    <div className="card" key={id}>
+    <article className="card" key={id}>
       <Link to={`/logement/${id}`}>
         <div className="title">{title}</div>
+        <img src={cover} alt={title} className="card--image" />
       </Link>
-      <img src={cover} alt={title} className="card--image" />
-    </div>
+    </article>
   );
 }
 
