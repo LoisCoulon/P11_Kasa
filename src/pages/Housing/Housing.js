@@ -1,16 +1,39 @@
 import Gallery from "../../components/Gallery/Gallery";
-import json from "../../data/data.json";
 import Accordion from "../../components/Accordion/Accordion";
 import Rating from "../../components/Rating/Rating";
 import Tag from "../../components/Tag/Tag";
 import { Navigate, useParams } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function Housing() {
   const { id } = useParams();
-  const [data] = useState(json);
+  const [data, setData] = useState([]);
+
+  const getData = () => {
+    fetch("../../data.json", {
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+    })
+      .then(function (response) {
+        console.log(response);
+        return response.json();
+      })
+      .then(function (myJson) {
+        console.log(myJson);
+        setData(myJson);
+      });
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
+
+  console.log(data);
 
   let appartment = data.find((app) => app.id === id);
+  console.log(appartment);
 
   if (!appartment) {
     return <Navigate to="*" />;

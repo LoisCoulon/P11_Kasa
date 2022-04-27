@@ -1,10 +1,30 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import imgTop from "../../assets/top-img.png";
 import Card from "../../components/Card/Card";
-import json from "../../data/data.json";
 
 function Home() {
-  const [data] = useState(json);
+  const [data, setData] = useState([]);
+
+  const getData = () => {
+    fetch("data.json", {
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+    })
+      .then(function (response) {
+        console.log(response);
+        return response.json();
+      })
+      .then(function (myJson) {
+        console.log(myJson);
+        setData(myJson);
+      });
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
 
   return (
     <section className="home-content">

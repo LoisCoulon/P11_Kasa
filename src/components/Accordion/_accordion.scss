@@ -9,6 +9,9 @@
   font-size: 24px;
   font-weight: 500;
   border-radius: 5px;
+  &:nth-child(4) {
+    margin-bottom: 250px;
+  }
 
   .accordion-title {
     background-color: $primary;
