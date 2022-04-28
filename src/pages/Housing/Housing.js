@@ -8,7 +8,7 @@ import { useState, useEffect } from "react";
 function Housing() {
   const { id } = useParams();
   const [appartment, setAppartment] = useState(null);
-  const navigate = useNavigate;
+  const navigate = useNavigate();
 
   useEffect(() => {
     const getData = () => {
