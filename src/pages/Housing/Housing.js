@@ -2,44 +2,38 @@ import Gallery from "../../components/Gallery/Gallery";
 import Accordion from "../../components/Accordion/Accordion";
 import Rating from "../../components/Rating/Rating";
 import Tag from "../../components/Tag/Tag";
-import { Navigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 function Housing() {
   const { id } = useParams();
-  const [data, setData] = useState([]);
-
-  const getData = () => {
-    fetch("../../data.json", {
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-    })
-      .then(function (response) {
-        console.log(response);
-        return response.json();
-      })
-      .then(function (myJson) {
-        console.log(myJson);
-        setData(myJson);
-      });
-  };
+  const [appartment, setAppartment] = useState(null);
+  const navigate = useNavigate;
 
   useEffect(() => {
+    const getData = () => {
+      fetch("../../data.json", {
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      })
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (myJson) {
+          let myAppartment = myJson.find((app) => app.id === id);
+          if (myAppartment) {
+            setAppartment(myAppartment);
+          } else {
+            navigate("/*");
+          }
+        });
+    };
     getData();
-  }, []);
+  }, [appartment, id, navigate]);
 
-  console.log(data);
-
-  let appartment = data.find((app) => app.id === id);
-  console.log(appartment);
-
-  if (!appartment) {
-    return <Navigate to="*" />;
-  }
-
-  return (
+  return appartment ? (
     <div className="housing">
       <Gallery
         pictures={appartment.pictures}
@@ -77,6 +71,6 @@ function Housing() {
         </div>
       </div>
     </div>
-  );
+  ) : null;
 }
 export default Housing;
