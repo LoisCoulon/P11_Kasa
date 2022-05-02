@@ -13,23 +13,29 @@ function Gallery(props) {
   return (
     <section className="gallery">
       <div className="container">
-        <img
-          onClick={() => updateActiveIndex(prevImgIndex)}
-          className="leftArrow"
-          src={leftArrow}
-          alt="left arrow"
-        />
+        {pictures.length > 1 ? (
+          <img
+            onClick={() => updateActiveIndex(prevImgIndex)}
+            className="leftArrow"
+            src={leftArrow}
+            alt="left arrow"
+          />
+        ) : null}
+
         <img
           src={pictures[activeIndex]}
           alt={title}
           className="gallery--image"
         />
-        <img
-          onClick={() => updateActiveIndex(nextImgIndex)}
-          className="rightArrow"
-          src={rightArrow}
-          alt="right arrow"
-        />
+        {pictures.length > 1 ? (
+          <img
+            onClick={() => updateActiveIndex(nextImgIndex)}
+            className="rightArrow"
+            src={rightArrow}
+            alt="right arrow"
+          />
+        ) : null}
+
         <span className="nbPhoto">
           {activeIndex + 1} / {pictures.length}
         </span>
